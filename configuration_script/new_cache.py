@@ -1,7 +1,8 @@
 from m5.objects import *
 
+
 class L1DCache(Cache):
-    size = '32kB'
+    size = "32kB"
     assoc = 2
     tag_latency = 2
     data_latency = 2
@@ -12,8 +13,9 @@ class L1DCache(Cache):
     def __init__(self):
         super(L1DCache, self).__init__()
 
+
 class L1ICache(Cache):
-    size = '32kB'
+    size = "32kB"
     assoc = 2
     tag_latency = 2
     data_latency = 2
@@ -24,8 +26,9 @@ class L1ICache(Cache):
     def __init__(self):
         super(L1ICache, self).__init__()
 
+
 class L2Cache(Cache):
-    size = '256kB'
+    size = "256kB"
     assoc = 8
     tag_latency = 20
     data_latency = 20

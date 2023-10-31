@@ -4,6 +4,3 @@ chmod 777 pthread_matrixmul
 /sbin/m5 resetstats
 ./pthread_matrixmul 8
 /sbin/m5 exit
-
-
-
