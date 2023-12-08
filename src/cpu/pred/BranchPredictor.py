@@ -73,6 +73,10 @@ class BranchPredictor(SimObject):
         "Indirect branch predictor, set to NULL to disable indirect predictions",
     )
 
+class MySimpleBP(BranchPredictor):
+    type = 'MySimpleBP'
+    cxx_class = 'gem5::branch_prediction::MySimpleBP'
+    cxx_header = "cpu/pred/mysimplebp.hh"
 
 class LocalBP(BranchPredictor):
     type = "LocalBP"
@@ -106,6 +110,15 @@ class BiModeBP(BranchPredictor):
     globalCtrBits = Param.Unsigned(2, "Bits per counter")
     choicePredictorSize = Param.Unsigned(8192, "Size of choice predictor")
     choiceCtrBits = Param.Unsigned(2, "Bits of choice counters")
+
+class PerceptronBP(BranchPredictor):
+    type = "PerceptronBP"
+    cxx_class = "gem5::branch_prediction::PerceptronBP"
+    cxx_header = "cpu/pred/perceptron.hh"
+
+    globalPredictorSize = Param.Unsigned(8192, "Size of global predictor")
+    threshold = Param.Unsigned(133, "Threshold for perceptron")
+    GHR_len = Param.Unsigned(62, "Size of GHR")
 
 
 class TAGEBase(SimObject):
